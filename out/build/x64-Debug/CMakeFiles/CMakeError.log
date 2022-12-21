@@ -1,0 +1,57 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: E:/Visual Studio/Projects/src/OpenGL-Template/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Visual Studio/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_06f86 && [1/2] Building C object CMakeFiles\cmTC_06f86.dir\src.c.obj
+FAILED: CMakeFiles/cmTC_06f86.dir/src.c.obj 
+"E:\Visual Studio\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\cl.exe"  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\cmTC_06f86.dir\src.c.obj /FdCMakeFiles\cmTC_06f86.dir\ /FS -c "E:\Visual Studio\Projects\src\OpenGL-Template\out\build\x64-Debug\CMakeFiles\CMakeTmp\src.c"
+E:\Visual Studio\Projects\src\OpenGL-Template\out\build\x64-Debug\CMakeFiles\CMakeTmp\src.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: E:/Visual Studio/Projects/src/OpenGL-Template/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Visual Studio/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_1a6de && [1/2] Building C object CMakeFiles\cmTC_1a6de.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_1a6de.exe
+FAILED: cmTC_1a6de.exe 
+cmd.exe /C "cd . && "E:\Visual Studio\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_1a6de.dir --rc="E:\Windows Kits\10\bin\10.0.22000.0\x64\rc.exe" --mt="E:\Windows Kits\10\bin\10.0.22000.0\x64\mt.exe" --manifests  -- "E:\Visual Studio\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\link.exe" /nologo CMakeFiles\cmTC_1a6de.dir\CheckFunctionExists.c.obj  /out:cmTC_1a6de.exe /implib:cmTC_1a6de.lib /pdb:cmTC_1a6de.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+LINK Pass 1: command "E:\Visual Studio\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_1a6de.dir\CheckFunctionExists.c.obj /out:cmTC_1a6de.exe /implib:cmTC_1a6de.lib /pdb:cmTC_1a6de.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_1a6de.dir/intermediate.manifest CMakeFiles\cmTC_1a6de.dir/manifest.res" failed (exit code 1104) with the following output:
+LINK : fatal error LNK1104: cannot open file 'pthreads.lib'
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: E:/Visual Studio/Projects/src/OpenGL-Template/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/Visual Studio/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_57dd5 && [1/2] Building C object CMakeFiles\cmTC_57dd5.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_57dd5.exe
+FAILED: cmTC_57dd5.exe 
+cmd.exe /C "cd . && "E:\Visual Studio\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_57dd5.dir --rc="E:\Windows Kits\10\bin\10.0.22000.0\x64\rc.exe" --mt="E:\Windows Kits\10\bin\10.0.22000.0\x64\mt.exe" --manifests  -- "E:\Visual Studio\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\link.exe" /nologo CMakeFiles\cmTC_57dd5.dir\CheckFunctionExists.c.obj  /out:cmTC_57dd5.exe /implib:cmTC_57dd5.lib /pdb:cmTC_57dd5.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+LINK Pass 1: command "E:\Visual Studio\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_57dd5.dir\CheckFunctionExists.c.obj /out:cmTC_57dd5.exe /implib:cmTC_57dd5.lib /pdb:cmTC_57dd5.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_57dd5.dir/intermediate.manifest CMakeFiles\cmTC_57dd5.dir/manifest.res" failed (exit code 1104) with the following output:
+LINK : fatal error LNK1104: cannot open file 'pthread.lib'
+ninja: build stopped: subcommand failed.
+
+
+
